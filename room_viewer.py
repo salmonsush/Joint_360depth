@@ -32,7 +32,7 @@ if __name__ == '__main__':
     img_names.sort()
 
     #Output resolution
-    H,W = 512, 1024
+    H,W = 256, 1024
 
     for name in tqdm(img_names):
         img = cv2.imread(os.path.join(args.img_dir,name))
