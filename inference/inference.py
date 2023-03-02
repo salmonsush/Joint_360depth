@@ -79,12 +79,12 @@ class Inference(object):
             normalizer = mpl.colors.Normalize(vmin=disp_pp.min(), vmax=vmax)
             mapper = cm.ScalarMappable(norm=normalizer, cmap='magma')
             disp_pp = (mapper.to_rgba(disp_pp)[:, :, :3] * 255).astype(np.uint8)
-            np.save(os.path.join(self.config.output_path, eval_name+'.npy'), disp_pp)
 
             eval_name = (image_path.split('/')[-1]).split('.')[0]
             save_name = eval_name +'_disp' '.png'        
     
             plt.imsave(os.path.join(self.config.output_path,save_name ), disp_pp, cmap='magma')
+            np.save(os.path.join(self.config.output_path, eval_name+'.npy'), disp_pp)
 
 
 
